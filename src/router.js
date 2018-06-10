@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import { LocaleProvider, Divider, Pagination, Button } from 'antd';
+// import { Router, Route, browserHistory } from 'react-router';
+import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
+// 组件:Pages
+import Home from './pages/Home';
 // 样式
-import './static/css/router.less';
-// Logo
-import logo from './static/images/logo.svg';
+import './static/css/index.less';
 
 class RouterConfig extends Component {
   render() {
     return (
       <LocaleProvider locale={zhCN}>
-        <div className="router">
-          <div className="router-logo">
-            <img src={logo} width="160" height="160" alt="" />
-          </div>
-          <Button type="primary">Button</Button>
-          <Divider />
-          <Pagination defaultCurrent={1} total={50} showSizeChanger />
-        </div>
+        <Home />
       </LocaleProvider>
     );
   }
