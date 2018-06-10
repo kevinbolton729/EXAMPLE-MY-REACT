@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { LocaleProvider, Divider, Pagination, Button } from "antd";
-import zh_CN from "antd/lib/locale-provider/zh_CN";
+import React, { Component } from 'react';
+import { LocaleProvider, Divider, Pagination, Button } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 // 样式
-import "./static/css/router.less";
+import './static/css/router.less';
 // Logo
-import logo from "./static/images/logo.svg";
+import logo from './static/images/logo.svg';
 
 class RouterConfig extends Component {
   render() {
     return (
-      <LocaleProvider locale={zh_CN}>
+      <LocaleProvider locale={zhCN}>
         <div className="router">
           <div className="router-logo">
             <img src={logo} width="160" height="160" alt="" />
