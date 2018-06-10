@@ -2,7 +2,7 @@
  * @Author: Kevin Bolton
  * @Date: 2018-02-05 22:04:50
  * @Last Modified by: Kevin Bolton
- * @Last Modified time: 2018-06-10 21:30:44
+ * @Last Modified time: 2018-06-10 22:01:33
  */
 import { message as openMessage } from 'antd';
 import md5 from 'js-md5';
@@ -252,3 +252,10 @@ export const dispatchAction = (props, opts) => {
   const { dispatch } = props;
   dispatch(opts.payload ? { type: opts.type, payload: opts.payload } : { type: opts.type });
 };
+
+export const fixedZero = val => (val * 1 < 10 ? `0${val}` : val);
+
+/* eslint no-useless-escape:0 */
+const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/g;
+
+export const isUrl = path => reg.test(path);

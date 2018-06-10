@@ -13,9 +13,9 @@ class Home extends PureComponent {
     };
   }
 
-  componentDidMount() {
-    console.log(this.props, 'props');
-  }
+  // componentDidMount() {
+  //   console.log(this.props, 'props');
+  // }
 
   render() {
     const { test } = this.state;

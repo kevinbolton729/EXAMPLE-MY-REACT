@@ -1,10 +1,10 @@
-import { isUrl } from '../utils/utils';
+import { isUrl } from '../utils/';
 
 const menuData = [
   {
-    name: 'Dashboard',
+    name: 'Home',
     icon: 'desktop',
-    path: 'dashboard',
+    path: 'home',
     children: [
       {
         name: '工作台',
@@ -17,17 +17,21 @@ const menuData = [
 
 function formatter(data, parentPath = '', parentAuthority) {
   return data.map((item) => {
-    let { path } = item;
-    if (!isUrl(path)) {
-      path = parentPath + item.path;
+    const newItem = item;
+    if (!isUrl(newItem.path)) {
+      newItem.path = `${parentPath}${newItem.path}`;
     }
     const result = {
-      ...item,
-      path,
-      authority: item.authority || parentAuthority,
+      ...newItem,
+      path: newItem.path,
+      authority: newItem.authority || parentAuthority,
     };
-    if (item.children) {
-      result.children = formatter(item.children, `${parentPath}${item.path}/`, item.authority);
+    if (newItem.children) {
+      result.children = formatter(
+        newItem.children,
+        `${parentPath}${newItem.path}/`,
+        newItem.authority
+      );
     }
     return result;
   });
