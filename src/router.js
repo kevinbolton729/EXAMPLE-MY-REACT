@@ -6,7 +6,7 @@ import "./static/css/router.less";
 // Logo
 import logo from "./static/images/logo.svg";
 
-class Router extends Component {
+class RouterConfig extends Component {
   render() {
     return (
       <LocaleProvider locale={zh_CN}>
@@ -23,4 +23,4 @@ class Router extends Component {
   }
 }
 
-export default Router;
+export default RouterConfig;
