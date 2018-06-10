@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 // 组件:Pages
-import Home from './pages/Home';
+import Home from '../pages/Home';
 // 样式
-import './static/css/index.less';
+import '../static/css/index.less';
 
 class RouterConfig extends PureComponent {
   render() {
