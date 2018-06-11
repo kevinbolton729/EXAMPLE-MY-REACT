@@ -1,21 +1,21 @@
-import { isUrl } from '../utils/';
+import { isUrl } from "../utils/";
 
 const menuData = [
   {
-    name: 'Home',
-    icon: 'desktop',
-    path: 'home',
+    name: "Home",
+    icon: "desktop",
+    path: "home",
     children: [
       {
-        name: '工作台',
-        path: 'workspace',
+        name: "工作台",
+        path: "workspace",
         // hideInMenu: true,
       },
     ],
   },
 ];
 
-function formatter(data, parentPath = '', parentAuthority) {
+function formatter(data, parentPath = "", parentAuthority) {
   return data.map((item) => {
     const newItem = item;
     if (!isUrl(newItem.path)) {

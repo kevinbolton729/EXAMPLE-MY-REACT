@@ -1,15 +1,11 @@
 import React, { PureComponent } from "react";
 import { Divider, Pagination, Button } from "antd";
-// 样式
-import "./index.less";
-// Logo
-import logo from "../../static/images/logo.svg";
 
-class Home extends PureComponent {
+class Other extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      test: "点击我吧",
+      test: "我是Other的按钮",
     };
   }
 
@@ -19,12 +15,9 @@ class Home extends PureComponent {
 
   render() {
     const { test } = this.state;
-    console.log(this.props, "home props");
+    console.log(this.props, "other props");
     return (
-      <div className="home">
-        <div className="home-logo">
-          <img src={logo} width="160" height="160" alt="" />
-        </div>
+      <div style={{ textAlign: "center" }}>
         <Button type="primary">{test}</Button>
         <Divider />
         <Pagination defaultCurrent={1} total={50} showSizeChanger />
@@ -33,4 +26,4 @@ class Home extends PureComponent {
   }
 }
 
-export default Home;
+export default Other;

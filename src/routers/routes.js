@@ -1,23 +1,28 @@
-import pathToRegexp from 'path-to-regexp';
-import { getMenuData } from './menus';
+import pathToRegexp from "path-to-regexp";
+import { getMenuData } from "./menus";
+// 组件:Components
+import AsyncComponent from "../components/AsyncComponent";
 
 function getFlatMenuData(menus) {
-  let keys = {};
+  const keys = { value: {} };
   menus.forEach((item) => {
     if (item.children) {
-      keys[item.path] = { ...item };
-      keys = { ...keys, ...getFlatMenuData(item.children) };
+      keys.value[item.path] = { ...item };
+      keys.value = { ...keys, ...getFlatMenuData(item.children) };
     } else {
-      keys[item.path] = { ...item };
+      keys.value[item.path] = { ...item };
     }
   });
-  return keys;
+  return keys.value;
 }
 
 export const getRouterData = () => {
   const routerConfig = {
-    '/home': {
-      component: () => import('../pages/Home'),
+    "/home": {
+      component: AsyncComponent(() => import("../pages/Home")),
+    },
+    "/other": {
+      component: AsyncComponent(() => import("../pages/Other")),
     },
   };
   const routerData = {};
