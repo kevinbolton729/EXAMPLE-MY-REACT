@@ -18,11 +18,11 @@ function getFlatMenuData(menus) {
 
 export const getRouterData = () => {
   const routerConfig = {
-    "/home": {
-      component: AsyncComponent(() => import("../pages/Home")),
+    "/": {
+      component: AsyncComponent(() => import("../layouts/DefaultLayout")),
     },
-    "/other": {
-      component: AsyncComponent(() => import("../pages/Other")),
+    "/user": {
+      component: AsyncComponent(() => import("../layouts/UserLayout")),
     },
   };
   const routerData = {};

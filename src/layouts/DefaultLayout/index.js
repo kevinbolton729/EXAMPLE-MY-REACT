@@ -5,27 +5,14 @@ import "./index.less";
 // Logo
 import logo from "../../static/images/logo.svg";
 
-class Home extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      test: "点击我吧",
-    };
-  }
-
-  // componentDidMount() {
-  //   console.log(this.props, 'props');
-  // }
-
+class DefalutLayout extends PureComponent {
   render() {
-    const { test } = this.state;
-    console.log(this.props, "home props");
     return (
       <div className="home">
         <div className="home-logo">
           <img src={logo} width="160" height="160" alt="" />
         </div>
-        <Button type="primary">{test}</Button>
+        <Button type="primary">我是DefalutLayout的按钮</Button>
         <Divider />
         <Pagination defaultCurrent={1} total={50} showSizeChanger />
       </div>
@@ -33,4 +20,4 @@ class Home extends PureComponent {
   }
 }
 
-export default Home;
+export default DefalutLayout;
